@@ -24,6 +24,15 @@ Luồng dữ liệu như sau:
 4. **LS2** đẩy log đến **ELASTICHSEARCH**
 
 ---
+
+CÁC BƯỚC CÀI ĐẶT
+
+1. Chạy script redis-server.sh trên REDIS-SERVER
+2. Chạy scrtip elk-server.sh trên ELK-SERVER
+3. Chạy script client.sh trên các máy client
+
+---
+
 Tham khảo 
 - http://viisix.com/tich-hop-redis-vao-he-thong-elk
 - http://openstack.prov12n.com/openstack-lumberjack-part-3-logstash-and-kibana/
