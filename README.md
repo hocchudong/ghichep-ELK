@@ -25,11 +25,11 @@ Luồng dữ liệu như sau:
 
 ---
 
-CÁC BƯỚC CÀI ĐẶT
+####CÁC BƯỚC CÀI ĐẶT
 
-1. Chạy script redis-server.sh trên REDIS-SERVER
-2. Chạy scrtip elk-server.sh trên ELK-SERVER
-3. Chạy script client.sh trên các máy client
+1. Chạy script `redis-server.sh` trên REDIS-SERVER
+2. Chạy scrtip `elk-server.sh` trên ELK-SERVER
+3. Chạy script `client.sh` trên các máy client
 
 ---
 
