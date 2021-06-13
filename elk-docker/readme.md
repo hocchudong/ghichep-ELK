@@ -30,8 +30,23 @@ Thực hiện tải git và clone repo về.
 
 ### Thưc thi file docker-compose
 
-Sau khi clone thư mục chứa file docker-compose về, thực thi file.
+Sau khi clone thư mục chứa file docker-compose về, ta sẽ bắt đầu thực thi file docker compose
+
+- Di chuyển vào thư mục chưa file docker-compose dành cho ELK.
 
 ```
+cd ghichep-ELK/elk-docker/
+```
+
+Ngoài file docker-compose là file chính, thư mục này còn chứa các file cấu hình mẫu, file log mẫu để sau này elastic, logstash, kibana sử dụng.
+
+- Tiếp tục thực hiện lệnh dưới để tạo các container.
 
 ```
+docker-compose up -d
+```
+
+Chờ các image được tải về và tạo ra các container. Sau đó kiểm tra bằng lệnh `docker ps` ta sẽ thấy trạng thái của các container.
+
+
+
