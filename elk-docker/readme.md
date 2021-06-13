@@ -45,8 +45,23 @@ Ngoài file docker-compose là file chính, thư mục này còn chứa các fil
 ```
 docker-compose up -d
 ```
+Chờ các image được tải về và tạo ra các container. Ta sẽ thấy quá trình tải các image về như sau
 
-Chờ các image được tải về và tạo ra các container. Sau đó kiểm tra bằng lệnh `docker ps` ta sẽ thấy trạng thái của các container.
+![Anh1](https://image.prntscr.com/image/SY8J22jCS0ClHGmJlEVPPQ.png)
+
+ Sau đó kiểm tra bằng lệnh `docker ps` ta sẽ thấy trạng thái của các container. Kết quả của lệnh `docker ps`
+
+ ![anh2](https://image.prntscr.com/image/AgDis4MjR_eeoQ7Mpxb_8w.png)
+
+Truy cập vào địa chỉ sau:
+  - Kibana: `http://172.16.70.201:5601/`
+  - Elastic: `http://172.16.70.201:9200`
+
+Giao diện Kibana
+
+![Anh3](https://image.prntscr.com/image/hDSb0UMnQhqeQwbFPeFLIA.png)
+
+Trong repo này có sử dụng các file log mẫu của apache và nginx, hãy khai báo index cho kibana để quan sát log.
 
 
 
