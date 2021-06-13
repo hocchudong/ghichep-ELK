@@ -57,6 +57,11 @@ Truy cập vào địa chỉ sau:
   - Kibana: `http://172.16.70.201:5601/`
   - Elastic: `http://172.16.70.201:9200`
 
+Giao diện Kibana
+
+![Anh3](https://image.prntscr.com/image/hDSb0UMnQhqeQwbFPeFLIA.png)
+
+Trong repo này có sử dụng các file log mẫu của apache và nginx, hãy khai báo index cho kibana để quan sát log.
 
 
 
