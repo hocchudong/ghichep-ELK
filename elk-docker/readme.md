@@ -53,6 +53,17 @@ Chờ các image được tải về và tạo ra các container. Ta sẽ thấy
 
  ![anh2](https://image.prntscr.com/image/AgDis4MjR_eeoQ7Mpxb_8w.png)
 
+ Hoặc bằng lệnh `docker-compose ps`
+
+ ```
+ [root@elk-lab01 elk-docker]# docker-compose ps
+     Name                    Command               State                         Ports
+-------------------------------------------------------------------------------------------------------------
+hcd-demo-es       /tini -- /usr/local/bin/do ...   Up      0.0.0.0:9200->9200/tcp,:::9200->9200/tcp, 9300/tcp
+hcd-demo-kibana   /usr/local/bin/dumb-init - ...   Up      0.0.0.0:5601->5601/tcp,:::5601->5601/tcp
+hcd-demo-ls       /usr/local/bin/docker-entr ...   Up      0.0.0.0:5044->5044/tcp,:::5044->5044/tcp, 9600/tcp
+```
+
 Truy cập vào địa chỉ sau:
   - Kibana: `http://172.16.70.201:5601/`
   - Elastic: `http://172.16.70.201:9200`
