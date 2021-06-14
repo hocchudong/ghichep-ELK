@@ -5,8 +5,8 @@
 Cập nhật OS và tải các phần mềm cần thiết. 
 
 ```
-apt update 
-apt install wget vim git
+apt-get -y update 
+apt-get -y install wget vim git
 ```
 
 Tải script 
