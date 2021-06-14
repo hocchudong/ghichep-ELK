@@ -1,5 +1,7 @@
 #!/bin/bash
-
+### 16.04.2021
+### CongTO
+##########################################
 echo "SCRIPT CAI DAT ELK "
 sleep 3
 
