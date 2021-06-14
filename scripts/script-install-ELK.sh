@@ -26,7 +26,7 @@ echo "discovery.type: single-node" >> /etc/elasticsearch/elasticsearch.yml
 cp /etc/elasticsearch/jvm.options /etc/elasticsearch/jvm.options.bka
 echo "-Xms512m" >> /etc/elasticsearch/jvm.options
 echo "-Xmx512m" >> /etc/elasticsearch/jvm.options
-sed -i 's/X.Y.Z.W/$ipa/g' /etc/elasticsearch/elasticsearch.yml
+sed -i "s/X.Y.Z.W/$ipa/g" /etc/elasticsearch/elasticsearch.yml
 
 systemctl enable elasticsearch.service
 systemctl start elasticsearch.service
