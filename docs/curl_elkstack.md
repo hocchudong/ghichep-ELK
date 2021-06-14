@@ -47,5 +47,35 @@ curl -XPOST '172.16.71.141:9200/articles/_doc/?pretty' -d '{"topic":"java","titl
 }
 ```
 
+- Truy vấn dữ liệu có `id là 1` trong index `articles` bằng cách chèn giá trị của id `1?pretty`.
 
-curl -XGET '192.168.101.100:9200/articles/_doc/1?pretty'
+```
+curl -XGET '172.16.71.141:9200/articles/_doc/1?pretty'
+```
+
+Kết quả của dữ liệu có ID bằng 1
+```
+{
+  "_index" : "articles",
+  "_type" : "_doc",
+  "_id" : "1",
+  "_version" : 1,
+  "_seq_no" : 0,
+  "_primary_term" : 1,
+  "found" : true,
+  "_source" : {
+    "topic" : "python",
+    "title" : "python tuples",
+    "description" : "practical operations with python tuples",
+    "author" : "santosh",
+    "date" : "1-1-2019",
+    "views" : "100"
+  }
+}
+```
+
+- Tương tự có thể tra cứu dữ liệu của id là `xBDhCnoBAbSlHfTyy76L`
+
+```
+curl -XGET '172.16.71.141:9200/articles/_doc/xBDhCnoBAbSlHfTyy76L?pretty'
+```
