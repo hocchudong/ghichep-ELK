@@ -1,13 +1,19 @@
 # Hướng dẫn sử dụng curl để làm việc với ELK Stack
-Tài liệu này ghi chép lại các bước thực hành CURL với ELK Stack. Ta có thể sử dụng  lệnh curl tương tác với API mà Elastic cung cấp để :
-- Tạo index 
-- Chèn dữ liệu.
-- Truy vấn dữ liệu.
-- Cập nhật dữ liệu.
 
+
+Tài liệu này ghi chép lại các bước thực hành CURL với ELK Stack. Ta có thể sử dụng  lệnh curl tương tác với API mà Elastic cung cấp để tương tác với `index` và `document` :
+- Tạo  - CREATE 
+- Đọc  - READ
+- Cập nhật - UPDATE
+- Xóa - DELETE
+
+Một số tài liệu sẽ gọi là CURD có nghĩa là: Create, Update, Read, Delete
+ 
 Để hoàn thành các bài này, cần có hệ thống ELK đã được cài đặt. Hãy tham khảo tài liệu hướng dẫn cài đặt ELK bằng Script:`https://github.com/hocchudong/ghichep-ELK/tree/master/scripts`.
 
 - Trong hướng dẫn này thực hành trên ELK Stack version 7.13.1
+
+## CREATE
 
 ### Tạo index
 
@@ -18,10 +24,9 @@ curl -XPUT '172.16.71.141:9200/articles?&pretty'
 
 ## Chèn dữ liệu vào index
 
-Dữ liệu trong elastic được gọi là `documents`
+Dữ liệu trong elastic được gọi là `documents`.
 
 Có 02 cách để chèn dữ liệu vào trong elastic, bao gồm: 
-
 - Cách sử dụng POST. Khi sử dụng phương thức POST để chèn dữ liệu thì có thể không cần khai báo ID.
 - Cách sử dụng PUT. Khi sử dụng phương thức PUT để chén thì bắt buộc phải có ID trong quá trình truyền.
 
@@ -42,23 +47,22 @@ Có 02 cách để chèn dữ liệu vào trong elastic, bao gồm:
   ```
 
 - Kết quả của lệnh trên sẽ hiển thị như bên dưới, trong đó dòng `"_id" : "xBDhCnoBAbSlHfTyy76L",` sẽ được sinh tự động. 
-
-```
-{
-  "_index" : "articles",
-  "_type" : "_doc",
-  "_id" : "xBDhCnoBAbSlHfTyy76L",
-  "_version" : 1,
-  "result" : "created",
-  "_shards" : {
-    "total" : 2,
-    "successful" : 1,
-    "failed" : 0
-  },
-  "_seq_no" : 1,
-  "_primary_term" : 1
-}
-```
+  ```
+  {
+    "_index" : "articles",
+    "_type" : "_doc",
+    "_id" : "xBDhCnoBAbSlHfTyy76L",
+    "_version" : 1,
+    "result" : "created",
+    "_shards" : {
+      "total" : 2,
+      "successful" : 1,
+      "failed" : 0
+    },
+    "_seq_no" : 1,
+    "_primary_term" : 1
+  }
+  ```
 
 ### Sử dụng PUT để chèn dữ liệu.
 
@@ -67,59 +71,57 @@ Khi sử dụng PUT để chèn dữ liệu vào index, bạn bắt buộc phả
   curl -XPUT '172.16.71.141:9200/articles/_doc/9?pretty' -d '{"topic":"NodeJS","title": "NodeJS if else","description": "NodeJS Basic","author": "Tien","date": "9-6-2018","views" : "250"}' -H 'Content-Type: application/json'
   ```
 
+## READ 
 
-## Truy vấn dữ liệu.
+Đọc dữ liệu từ index và đọc các dữ liệu trong index sẽ thực hiện qua phương thức GET.
 
 - Truy vấn dữ liệu có `id là 1` trong index `articles` bằng cách chèn giá trị của id `1?pretty`.
-
-```
-curl -XGET '172.16.71.141:9200/articles/_doc/1?pretty'
-```
+  ```
+  curl -XGET '172.16.71.141:9200/articles/_doc/1?pretty'
+  ```
 
 Kết quả của dữ liệu có ID bằng 1
-```
-{
-  "_index" : "articles",
-  "_type" : "_doc",
-  "_id" : "1",
-  "_version" : 1,
-  "_seq_no" : 0,
-  "_primary_term" : 1,
-  "found" : true,
-  "_source" : {
-    "topic" : "python",
-    "title" : "python tuples",
-    "description" : "practical operations with python tuples",
-    "author" : "santosh",
-    "date" : "1-1-2019",
-    "views" : "100"
+  ```
+  {
+    "_index" : "articles",
+    "_type" : "_doc",
+    "_id" : "1",
+    "_version" : 1,
+    "_seq_no" : 0,
+    "_primary_term" : 1,
+    "found" : true,
+    "_source" : {
+      "topic" : "python",
+      "title" : "python tuples",
+      "description" : "practical operations with python tuples",
+      "author" : "santosh",
+      "date" : "1-1-2019",
+      "views" : "100"
+    }
   }
-}
-```
+  ```
 - Tra cứu dữ liệu có id là `xBDhCnoBAbSlHfTyy76L`
-
-```
-curl -XGET '172.16.71.141:9200/articles/_doc/xBDhCnoBAbSlHfTyy76L?pretty'
-```
+  ```
+  curl -XGET '172.16.71.141:9200/articles/_doc/xBDhCnoBAbSlHfTyy76L?pretty'
+  ```
 
 - Tra cứu dữ liệu có ID là `9`
-
-```
-curl -XGET '172.16.71.141:9200/articles/_doc/9?pretty'
-```
+  ```
+  curl -XGET '172.16.71.141:9200/articles/_doc/9?pretty'
+  ```
 
 ### Kiểm tra thông tin của các Index.
 
-- Sử dụng curl để kiểm tra toàn bộ các index
+Sử dụng curl để kiểm tra toàn bộ các index
 
-  - Sử dụng CURL
+- Sử dụng CURL
   ```
   curl -XGET '172.16.71.141:9200/_cat/indices?v'
   ```
 Kết quả bằng CURL
 ![A1](https://image.prntscr.com/image/EIZRcwnDTSW4MprTbG32cQ.png)
 
-  - Sử dụng Dev tools
+- Sử dụng Dev tools
   ```
   GET /_cat/indices?v'
   ```
