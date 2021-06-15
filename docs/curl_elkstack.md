@@ -79,3 +79,5 @@ Kết quả của dữ liệu có ID bằng 1
 ```
 curl -XGET '172.16.71.141:9200/articles/_doc/xBDhCnoBAbSlHfTyy76L?pretty'
 ```
+
+Tham khảo thêm tại: https://www.thegeekstuff.com/2019/05/elasticsearch-curd-examples/
