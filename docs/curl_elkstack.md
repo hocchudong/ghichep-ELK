@@ -137,18 +137,19 @@ Tham khảo thêm tại: https://www.thegeekstuff.com/2019/05/elasticsearch-curd
 
 ### Kiểm truy vấn dữ liệu của 1 index cụ thể.
 
-Tìm kiểm toàn bộ dữ liệu của một index
-
-```
-curl -XGET '172.16.71.141:9200/articles/_search'
-```
+- Tìm kiểm toàn bộ dữ liệu của một index, cụ thể là tìm trong index `articles`
+  ```
+  curl -XGET '172.16.71.141:9200/articles/_search'
+  ```
 
 
 ## 2. UPDATE 
 
-Sử dụng POST để update các dữ liệu đã được chèn vào index trước đó.
+Sử dụng POST để update các dữ liệu đã được chèn vào index trước đó. 
 
-- Cập nhật dữ liệu có ID là 9
+
+- Cập nhật lại dữ liệu có ID là 9.
+
   ```
     curl -XPOST '172.16.71.141:9200/articles/_doc/9?pretty' -d '{"topic":"java 2nd","title": "java 2nd interger","description": "practical operations with java interger","author": "Smith","date": "9-2-2021","views" : "50"}' -H 'Content-Type: application/json'
     ```
