@@ -148,6 +148,7 @@ curl -XGET '172.16.71.141:9200/articles/_search'
 
 Sử dụng POST để update các dữ liệu đã được chèn vào index trước đó.
 
- ```
-  curl -XPOST '172.16.71.141:9200/articles/_doc/?pretty' -d '{"topic":"java 2nd","title": "java 2nd interger","description": "practical operations with java interger","author": "Smith","date": "9-2-2021","views" : "50"}' -H 'Content-Type: application/json'
+- Cập nhật dữ liệu có ID là 9
   ```
+    curl -XPOST '172.16.71.141:9200/articles/_doc/9?pretty' -d '{"topic":"java 2nd","title": "java 2nd interger","description": "practical operations with java interger","author": "Smith","date": "9-2-2021","views" : "50"}' -H 'Content-Type: application/json'
+    ```
