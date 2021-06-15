@@ -147,7 +147,6 @@ Tham khảo thêm tại: https://www.thegeekstuff.com/2019/05/elasticsearch-curd
 
 Sử dụng POST để update các dữ liệu đã được chèn vào index trước đó. 
 
-
 - Cập nhật lại dữ liệu có ID là 9.
 
   ```
