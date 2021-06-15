@@ -13,7 +13,7 @@ Một số tài liệu sẽ gọi là CURD có nghĩa là: Create, Update, Read,
 
 - Trong hướng dẫn này thực hành trên ELK Stack version 7.13.1
 
-## CREATE
+## 1. CREATE
 
 ### Tạo index
 
@@ -22,7 +22,7 @@ Một số tài liệu sẽ gọi là CURD có nghĩa là: Create, Update, Read,
 curl -XPUT '172.16.71.141:9200/articles?&pretty'
 ```
 
-## Chèn dữ liệu vào index
+### Chèn dữ liệu vào index
 
 Dữ liệu trong elastic được gọi là `documents`.
 
@@ -71,7 +71,7 @@ Khi sử dụng PUT để chèn dữ liệu vào index, bạn bắt buộc phả
   curl -XPUT '172.16.71.141:9200/articles/_doc/9?pretty' -d '{"topic":"NodeJS","title": "NodeJS if else","description": "NodeJS Basic","author": "Tien","date": "9-6-2018","views" : "250"}' -H 'Content-Type: application/json'
   ```
 
-## READ 
+## 2. READ 
 
 Đọc dữ liệu từ index và đọc các dữ liệu trong index sẽ thực hiện qua phương thức GET.
 
@@ -131,3 +131,9 @@ Kết quả bằng Dev tools
 
 
 Tham khảo thêm tại: https://www.thegeekstuff.com/2019/05/elasticsearch-curd-examples/
+
+
+## 2. UPDATE 
+
+Sử dụng POST để update các dữ liệu đã được chèn vào index trước đó.
+
