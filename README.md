@@ -13,3 +13,4 @@
 - [Blog các bài tập về Elastic Stack](https://guido-lenacota.medium.com/)
 - [Repo tài liệu training để thi chứng chỉ ELK Stack](https://github.com/glenacota/elastic-training-repo)
 - [ElasticSearchTraining](https://github.com/DeruiDENG/ElasticSearchTraining)
+- [Introduction to Elasticsearch](https://github.com/wsutina/intro-elasticsearch-training)
