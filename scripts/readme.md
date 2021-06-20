@@ -2,6 +2,7 @@
 
 ### Script cài đặt ELK trên Ubuntu server 20.04
 
+
 Kiểm tra thời gian xem chuẩn chưa, để thời gian theo giờ Việt Nam để sau này nhận log cho chính xác. Nếu chưa biết thì google để tìm cách đặt thời gian nhé.
 
 - Kiểm tra thời gian của máy chủ bằng lệnh `timedatectl`. Ta có kết quả như sau là OK.
@@ -35,7 +36,22 @@ Kiểm tra thời gian xem chuẩn chưa, để thời gian theo giờ Việt Na
     apt-get -y install wget vim git
     ```
 
-- Tải script 
+- Vô hiệu hóa IPv6.
+    ```
+    echo > "net.ipv6.conf.all.disable_ipv6 = 1" > /etc/sysctl.conf
+    echo > "net.ipv6.conf.default.disable_ipv6 = 1" > /etc/sysctl.conf
+
+    sysctl -p
+    ```
+
+- Khởi động lại OS.
+
+- Login với quyền root.
+
+    ```
+    sudo su 
+    ```
+- Tải script và thực thi.
     ```
     wget https://raw.githubusercontent.com/hocchudong/ghichep-ELK/master/scripts/script-install-ELK.sh
     ```
