@@ -2,7 +2,7 @@
 
 - [Thư mục chứa các ghi chép về ELK.](./docs/)
 - [Docker và ELK.](./elk-docker/)
-- [Tài liệu thực hành ELK](./eld-hand-on-lab/)
+- [Tài liệu thực hành ELK](./elk-hand-on-lab/)
 - [Các script sử dụng khi tìm hiểu, triển khai ELK.](./scripts/)
 - [Các slide tham khảo về ELK.](./slides/)
 
