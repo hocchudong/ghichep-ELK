@@ -16,8 +16,6 @@ Lựa chọn một trong hai phương án cài đặt sau:
 
 ## Phương án 1: Cài bằng docker-compose.
 
-### Bước 1: Cài đặt docker và docker compose.
-
 Sử dụng docker-compose sẽ giúp linh hoạt, nhanh chóng có một môi trường ELK để thực hành.
 
 - [Xem hướng dẫn tại](https://github.com/hocchudong/ghichep-ELK/tree/master/elk-docker)
@@ -28,3 +26,32 @@ Với cách cài này, có thể tăng tốc thời gian bằng việc sử dụ
 
 - [Sử dụng script cài đặt ELK tại](https://github.com/hocchudong/ghichep-ELK/blob/master/scripts/readme.md)
 
+Sau khi cài đặt xong, kiểm tra trên CLI hoặc vào web để xem ELK hoạt động hay chưa.
+
+CLI: Sử dụng lệnh CURL để kiểm tra hoạt động của elasticsearch
+    ```
+    root@ubuntu20-04:~/ghichep-ELK/elk-docker# curl http://172.16.70.137:9200
+    {
+    "name" : "hcd-demo-es",
+    "cluster_name" : "es-docker-cluster",
+    "cluster_uuid" : "kYU922NfRSeTkfzGaHz1tg",
+    "version" : {
+        "number" : "7.13.2",
+        "build_flavor" : "default",
+        "build_type" : "docker",
+        "build_hash" : "4d960a0733be83dd2543ca018aa4ddc42e956800",
+        "build_date" : "2021-06-10T21:01:55.251515791Z",
+        "build_snapshot" : false,
+        "lucene_version" : "8.8.2",
+        "minimum_wire_compatibility_version" : "6.8.0",
+        "minimum_index_compatibility_version" : "6.0.0-beta1"
+    },
+    "tagline" : "You Know, for Search"
+    }
+    root@ubuntu20-04:~/ghichep-ELK/elk-docker#
+    ```
+
+Web: Truy cập vào web với địa chỉ: http://IP_ADD:9200 để xem trạng thái của elasticsearch.
+    ```
+    [Anh](https://image.prntscr.com/image/m9fYZ77LT8msu1xXCPyNIQ.png)
+    ```
