@@ -90,10 +90,9 @@ Trước tiên, cần khai báo mapping cho index. Việc này giống như chú
     ```
 
 - Thực hiện sử dụng lệnh CURL để tạp mapping cho index có tên là `shakespeare` theo lệnh dưới.
-
-```
-curl -H 'Content-Type: application/json' -XPUT 127.0.0.1:9200/shakespeare --data-binary @shakes-mapping.json
-```
+    ```
+    curl -H 'Content-Type: application/json' -XPUT 127.0.0.1:9200/shakespeare --data-binary @shakes-mapping.json
+    ```
 
 - Tải file chứa dữ liệu mẫu và import vào index `shakespeare` vừa tạo mapping ở trên.
     ```
@@ -109,17 +108,16 @@ Màn hình sẽ hiển thị quá trình import, chờ trong khoảng vài phút
 Kiểm tra dữ liệu bằng dòng lệnh.
 
 - Tiếp tục sử dụng lệnh curl, kiểm tra thông qua API của elastic xem dữ liệu đã được nạp hay chưa. Hãy copy đoạn lệnh dưới vào CLI và quan sát kết quả.
-
-```
-curl -H 'Content-Type: application/json' -XGET '127.0.0.1:9200/shakespeare/_search?pretty' -d '
-{
-"query" : {
-"match_phrase" : {
-"text_entry" : "to be or not to be"
-}
-}
-}'
-```
+    ```
+    curl -H 'Content-Type: application/json' -XGET '127.0.0.1:9200/shakespeare/_search?pretty' -d '
+    {
+    "query" : {
+    "match_phrase" : {
+    "text_entry" : "to be or not to be"
+    }
+    }
+    }'
+    ```
 
 - Kết quả của lệnh trên như sau là ok.
     ```
@@ -164,15 +162,20 @@ Kiểm tra thông qua GUI của Kibana.
 
 - Truy cập vào địa chỉ http://172.16.70.137:5601
 
-
 - Chọn `Add data`
+<p align="center">
 <img src="./images/kibana1.png" width="50%" height="50%">
+</p>
 
 - Chọn biểu tượng Menu => `Stack Management`
+<p align="center">
 <img src="./images/kibana2.png" width="50%" height="50%">
+</p>
 
 - Chọn `Index Patterns`
+<p align="center">
 <img src="./images/kibana3.png" width="50%" height="50%">
+</p>
 
 - Chọn `Create Index pattern`
 <img src="./images/kibana4.png" width="50%" height="50%">
@@ -185,7 +188,6 @@ Kiểm tra thông qua GUI của Kibana.
 <img src="./images/kibana7.png" width="50%" height="50%">
 
 - Quay lại menu và chọn `Discover`
-
 <img src="./images/kibana8.png" width="50%" height="50%">
 
 - Dữ liệu được import sẽ hiển thị như hình dưới.
