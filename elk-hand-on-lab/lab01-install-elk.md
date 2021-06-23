@@ -174,4 +174,4 @@ Kiểm tra thông qua GUI của Kibana.
 
 
 - Chọn `Index Partterns`
-![kibana2](./images/kibana3.png =680x680)
+![kibana2](./images/kibana3.png){:height="50%" width="50%"}
