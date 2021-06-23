@@ -8,6 +8,20 @@ Lưu ý: Thực hiện cài đặt manual docker, docker-compose hoặc dùng sc
 https://hocchudong.com/scrip-cai-dat-docker-docker-compose-tren-ubuntu-centos/
 ```
 
+Vắn tắt các bước trong bài trên như sau:
+
+```
+sudo su
+
+cd /root
+
+wget https://gist.githubusercontent.com/congto/17f11864549e902ff23cffc6e5beb390/raw/b49956890a7f749e571bcd8eb0eb1a74b3457ca5/install_docker.sh
+
+chmod +x install_docker.sh
+
+bash install_docker.sh
+````
+
 Thực hiện tải git và clone repo về.
 
 - Đối với Ubuntu: 
