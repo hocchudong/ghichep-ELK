@@ -165,14 +165,12 @@ Kiểm tra thông qua GUI của Kibana.
 
 
 - Chọn `Add data`
-
 <img src="./images/kibana1.png" width="50%" height="50%">
 
 - Chọn biểu tượng Menu => `Stack Management`
-![kibana2](./images/kibana2.png){:height="50%" width="50%"}
-
+<img src="./images/kibana2.png" width="50%" height="50%">
 
 - Chọn `Index Partterns`
-![kibana2](./images/kibana3.png){:height="50%" width="50%"}
+<img src="./images/kibana3.png" width="50%" height="50%">
 
 
