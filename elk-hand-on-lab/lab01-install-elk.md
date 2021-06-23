@@ -5,7 +5,7 @@ Chuẩn bị môi trường cài đặt ELK để thực hành.
 - ELK Stack: Phiên bản 7.10.x trở lên.
 - Cài đặt ELK theo phương án manual hoặc trong môi trường container.
 
-# Các bước cài đặt
+# Các bước cài đặt 
 - Cài đặt máy chủ với OS là Ubuntu Server 20.04 64 bit.
 - Thiết lập IP, Hostname.
 - Cấu hình NTP và kiểm tra thời gian cho phù hợp giờ VN.
@@ -14,13 +14,17 @@ Lựa chọn một trong hai phương án cài đặt sau:
 - Cài bằng docker-compose hoặc cài theo kiểu manual.
 - Đọc hướng dẫn dưới và lựa chọn một trong 2 phương án.
 
-## Phương án 1: Cài bằng docker-compose.
+## Cài đặt ELK
+
+Để thực hành với Elastic thì chỉ cần cài Elasticsearch là đủ, nhưng trong hướng dẫn này sẽ thực hiện cài đủ Elastic, Logstash và Kibana.
+
+### Phương án 1: Cài bằng docker-compose.
 
 Sử dụng docker-compose sẽ giúp linh hoạt, nhanh chóng có một môi trường ELK để thực hành.
 
 - [Xem hướng dẫn tại](https://github.com/hocchudong/ghichep-ELK/tree/master/elk-docker)
 
-## Phương án 2: Cài manual.
+### Phương án 2: Cài manual.
 
 Với cách cài này, có thể tăng tốc thời gian bằng việc sử dụng script cài đặt.
 
@@ -55,3 +59,37 @@ Web: Truy cập vào web với địa chỉ: http://IP_ADD:9200 để xem trạn
     ```
     [Anh](https://image.prntscr.com/image/m9fYZ77LT8msu1xXCPyNIQ.png)
     ```
+
+
+### Nạp dữ liệu vào ELK.
+
+Sau khi cài đặt xong ELK, thực hiện các thao tác dưới để nạp dữ liệu vào Elastic.
+
+Trước tiên, cần khai báo mapping cho index. Việc này giống như chúng ta tạo các bảng trong SQL truyền thống. Tức là sẽ định nghĩa các dữ liệu sau này được nạp vào có kiểu là gì: kiểu số, kiểu chuỗi ...
+
+-  Di chuyển về thư mục root
+    ```
+    sudo su
+
+    cd /root
+    ```
+
+- Tạo file với tên là `shakes-mapping.json` tại thư mục `root`. Dùng vi hoặc nano để tạo file với nội dung dưới.
+    ```
+    {
+        "mappings" : {
+            "properties" : {
+                "speaker" : {"type": "keyword" },
+                "play_name" : {"type": "keyword" },
+                "line_id" : { "type" : "integer" },
+                "speech_number" : { "type" : "integer" }
+            }
+        }
+    }
+    ```
+
+- Thực hiện sử dụng lệnh CURL để tạp mapping cho index có tên là `shakespeare` theo lệnh dưới.
+
+```
+curl -H 'Content-Type: application/json' -XPUT 127.0.0.1:9200/shakespeare --data-binary @shakes-mapping.json
+```
