@@ -93,3 +93,85 @@ Trước tiên, cần khai báo mapping cho index. Việc này giống như chú
 ```
 curl -H 'Content-Type: application/json' -XPUT 127.0.0.1:9200/shakespeare --data-binary @shakes-mapping.json
 ```
+
+- Tải file chứa dữ liệu mẫu và import vào index `shakespeare` vừa tạo mapping ở trên.
+    ```
+    wget https://github.com/hocchudong/ghichep-ELK/raw/master/elk-hand-on-lab/files/shakespeare_7.0.json
+    ```
+
+- Thực hiện import dữ liệu vào index `shakespeare`
+    ```
+    curl -H 'Content-Type: application/json' -X POST 'localhost:9200/shakespeare/doc/_bulk?pretty' --data-binary  @shakespeare_7.0.json
+    ```
+Màn hình sẽ hiển thị quá trình import, chờ trong khoảng vài phút dữ liệu được import vào hết, ta sẽ kiểm tra trong giao diện hoặc dòng lệnh để xem dữ liệu đã hiển thị lên chưa.
+
+Kiểm tra dữ liệu bằng dòng lệnh.
+
+- Tiếp tục sử dụng lệnh curl, kiểm tra thông qua API của elastic xem dữ liệu đã được nạp hay chưa. Hãy copy đoạn lệnh dưới vào CLI và quan sát kết quả.
+
+```
+curl -H 'Content-Type: application/json' -XGET '127.0.0.1:9200/shakespeare/_search?pretty' -d '
+{
+"query" : {
+"match_phrase" : {
+"text_entry" : "to be or not to be"
+}
+}
+}'
+```
+
+- Kết quả của lệnh trên như sau là ok.
+    ```
+    {
+    "took" : 84,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 1,
+        "successful" : 1,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 1,
+        "relation" : "eq"
+        },
+        "max_score" : 13.889601,
+        "hits" : [
+        {
+            "_index" : "shakespeare",
+            "_type" : "doc",
+            "_id" : "34229",
+            "_score" : 13.889601,
+            "_source" : {
+            "type" : "line",
+            "line_id" : 34230,
+            "play_name" : "Hamlet",
+            "speech_number" : 19,
+            "line_number" : "3.1.64",
+            "speaker" : "HAMLET",
+            "text_entry" : "To be, or not to be: that is the question:"
+            }
+        }
+        ]
+    }
+    }
+    ```
+
+
+Kiểm tra thông qua GUI của Kibana.
+
+- Truy cập vào địa chỉ http://172.16.70.137:5601
+
+
+- Chọn `Add data`
+
+![kibana1](./images/kibana1.png)
+
+
+- Chọn biểu tượng Menu => `Stack Management`
+![kibana2](./images/kibana2.png)
+
+
+- Chọn `Index Partterns`
+![kibana2](./images/kibana3.png)
