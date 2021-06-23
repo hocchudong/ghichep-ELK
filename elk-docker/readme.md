@@ -91,16 +91,16 @@ Trong repo này có sử dụng các file log mẫu của apache và nginx, hãy
 
 ### Xóa các container
 
-Để xóa các container, volume trong docker-compose trên, thực hiện các lệnh sau:
+- Để xóa các container, volume trong docker-compose trên, thực hiện các lệnh sau:
     ```
     docker-compose down
     docker rm -f $(docker ps -a -q)
     docker volume rm $(docker volume ls -q)
     ```
 
-hoặc các lệnh
+- Hoặc các lệnh
 
-    ````
+    ```
     docker-compose down
     docker-compose down --volumes --remove-orphans
-    ````
+    ```
