@@ -166,12 +166,12 @@ Kiểm tra thông qua GUI của Kibana.
 
 - Chọn `Add data`
 
-![kibana1](./images/kibana1.png){ width=50% }
+![kibana1](./images/kibana1.png =680x680)
 
 
 - Chọn biểu tượng Menu => `Stack Management`
-![kibana2](./images/kibana2.png){ width=50% }
+![kibana2](./images/kibana2.png =680x680)
 
 
 - Chọn `Index Partterns`
-![kibana2](./images/kibana3.png){ width=50% }
+![kibana2](./images/kibana3.png =680x680)
