@@ -112,10 +112,10 @@ Kiểm tra dữ liệu bằng dòng lệnh.
     curl -H 'Content-Type: application/json' -XGET '127.0.0.1:9200/shakespeare/_search?pretty' -d '
     {
     "query" : {
-    "match_phrase" : {
-    "text_entry" : "to be or not to be"
-    }
-    }
+        "match_phrase" : {
+            "text_entry" : "to be or not to be"
+            }
+        }
     }'
     ```
 
