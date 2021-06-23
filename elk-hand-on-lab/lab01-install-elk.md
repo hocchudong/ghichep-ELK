@@ -33,6 +33,8 @@ Với cách cài này, có thể tăng tốc thời gian bằng việc sử dụ
 Sau khi cài đặt xong, kiểm tra trên CLI hoặc vào web để xem ELK hoạt động hay chưa.
 
 CLI: Sử dụng lệnh CURL để kiểm tra hoạt động của elasticsearch
+
+- Lệnh curl `curl http://172.16.70.137:9200`
     ```
     root@ubuntu20-04:~/ghichep-ELK/elk-docker# curl http://172.16.70.137:9200
     {
@@ -56,9 +58,8 @@ CLI: Sử dụng lệnh CURL để kiểm tra hoạt động của elasticsearch
     ```
 
 Web: Truy cập vào web với địa chỉ: http://IP_ADD:9200 để xem trạng thái của elasticsearch.
-    ```
-    [Anh](https://image.prntscr.com/image/m9fYZ77LT8msu1xXCPyNIQ.png)
-    ```
+
+<img src="https://image.prntscr.com/image/m9fYZ77LT8msu1xXCPyNIQ.png" width="70%" height="70%">
 
 
 ### Nạp dữ liệu vào ELK.
