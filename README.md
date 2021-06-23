@@ -14,3 +14,7 @@
 - [Repo tài liệu training để thi chứng chỉ ELK Stack](https://github.com/glenacota/elastic-training-repo)
 - [ElasticSearchTraining](https://github.com/DeruiDENG/ElasticSearchTraining)
 - [Introduction to Elasticsearch](https://github.com/wsutina/intro-elasticsearch-training)
+- [Sampel grok trong logstash](https://github.com/longmikel/ELK)
+- [elk-training 1](https://github.com/vanessakovalsky/elk-training)
+- [elk-training 2](https://github.com/brahim19961920/elk-training)
+- [ElasticSearch training materials](https://jruels.github.io/elastic/)
