@@ -165,13 +165,27 @@ Kiểm tra thông qua GUI của Kibana.
 
 
 - Chọn `Add data`
-
-![kibana1](./images/kibana1.png =680x680)
-
+<img src="./images/kibana1.png" width="50%" height="50%">
 
 - Chọn biểu tượng Menu => `Stack Management`
-![kibana2](./images/kibana2.png =680x680)
+<img src="./images/kibana2.png" width="50%" height="50%">
 
+- Chọn `Index Patterns`
+<img src="./images/kibana3.png" width="50%" height="50%">
 
-- Chọn `Index Partterns`
-![kibana2](./images/kibana3.png){:height="50%" width="50%"}
+- Chọn `Create Index pattern`
+<img src="./images/kibana4.png" width="50%" height="50%">
+
+- Nhập tên của index  là `shakespeare*` vào mục tên của index pattern.
+<img src="./images/kibana5.png" width="50%" height="50%">
+
+<img src="./images/kibana6.png" width="50%" height="50%">
+
+<img src="./images/kibana7.png" width="50%" height="50%">
+
+- Quay lại menu và chọn `Discover`
+
+<img src="./images/kibana8.png" width="50%" height="50%">
+
+- Dữ liệu được import sẽ hiển thị như hình dưới.
+<img src="./images/kibana9.png" width="50%" height="50%">
