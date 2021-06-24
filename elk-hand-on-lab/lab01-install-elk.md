@@ -193,11 +193,11 @@ Kiểm tra thông qua GUI của Kibana.
 
 - Quay lại menu và chọn `Discover`
 <p align="center">
-<img src="./images/kibana8.png" width="50%" height="50%">
+<img src="./images/kibana8.png" width="60%" height="60%">
 </p>
 
 
 - Dữ liệu được import sẽ hiển thị như hình dưới.
 <p align="center">
-<img src="./images/kibana9.png" width="50%" height="50%">
+<img src="./images/kibana9.png" width="80%" height="80%">
 </p>
