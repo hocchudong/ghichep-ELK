@@ -19,3 +19,4 @@
 - [elk-training 1](https://github.com/vanessakovalsky/elk-training)
 - [elk-training 2](https://github.com/brahim19961920/elk-training)
 - [ElasticSearch training materials](https://jruels.github.io/elastic/)
+- [advanced-elasticsearch-training](https://github.com/davidbkemp/advanced-elasticsearch-training)
