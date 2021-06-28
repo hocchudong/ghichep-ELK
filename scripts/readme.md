@@ -15,7 +15,13 @@ Kiểm tra thời gian của máy chủ.
                 NTP service: active
             RTC in local TZ: no
     ```
-Nếu chưa biết thì google để tìm cách đặt thời gian nhé.
+
+- Nếu giờ chưa đúng theo giờ VN, thực hiện lệnh sau để chỉnh lại.
+    ```
+    timedatectl set-timezone Asia/Ho_Chi_Minh
+    ```
+
+Kiểm tra lại bằng lệnh `timedatectl`
 
 - Đặt hostname
     ```
@@ -42,6 +48,12 @@ Nếu chưa biết thì google để tìm cách đặt thời gian nhé.
     echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
 
     sysctl -p
+    ```
+
+    ```
+    sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="ipv6.disable=1"/g' /etc/default/grub
+
+    sudo update-grub
     ```
 
 - Khởi động lại OS.
